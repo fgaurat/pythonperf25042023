@@ -1,22 +1,25 @@
-# def get_value(i):
-#     return i
-
 def main():
-    a=2
-    l = []
-
     for i in range(10):
-        l.append(i)
+        print(i)
+        if i==53:
+            break
+    else:
+        print("pas trouvé")
 
-    print(l)
-    l = list(map(lambda i:i,range(10)))
+if __name__ == '__main__':
+    main()
 
-    print(l)
+
+def main01():
+    found = False
+    for i in range(10):
+        print(i)
+        if i==3:
+            found = True
+            break
     
-    l = [i**2 for i in range(10) if i%2] # Comprehension list , liste en intention. Pythonic way
-    print(l)
-
-
+    if found:
+        print("ok")
 
 if __name__ == '__main__':
     main()
