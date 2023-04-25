@@ -1,21 +1,22 @@
-import monmodule as mm
-
-from monmodule import hello2 as h2
-
-# from pck import *
-import pck
-
-# collision de nom 
-# def hello2(a,b):
-#     pass
+# def get_value(i):
+#     return i
 
 def main():
-    # hello2("GAURAT","Fred")
-    pck.monautremodule.hello3("GAURAT","Fred")
+    a=2
+    l = []
+
+    for i in range(10):
+        l.append(i)
+
+    print(l)
+    l = list(map(lambda i:i,range(10)))
+
+    print(l)
     
-# def main():
-#     mm.hello2("GAURAT","Fred")
-    
+    l = [i**2 for i in range(10) if i%2] # Comprehension list , liste en intention. Pythonic way
+    print(l)
+
+
 
 if __name__ == '__main__':
     main()
