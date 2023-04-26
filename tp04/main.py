@@ -8,6 +8,11 @@ def show_surface(o:ICalcGeo):
     print(o.surface)
 
 def main():
+    ce = Cercle(5)
+    print(ce.surface)
+
+
+def main01():
     c = Carre(2)
     print(c.surface)
     print(c)
