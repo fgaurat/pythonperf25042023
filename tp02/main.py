@@ -11,8 +11,7 @@ def do_log(p=""):
     return wrapper_main
 
 
-@do_log("a")
-@do_log("b")
+@do_log("a") 
 def say_hello(name):
 
     return f"hello {name}"
