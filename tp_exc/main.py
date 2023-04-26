@@ -21,7 +21,6 @@ def call_div(a,b):
     
     return r
 
-
 def main():
     a = 2
     b = 12
@@ -34,7 +33,6 @@ def main01():
         b=int(input("b: "))
         c = a/b
         print(c)
-
 
     except ZeroDivisionError as e:
         print("erreur !",e)
@@ -55,7 +53,6 @@ def main01():
         print("pas d'erreur")
     finally:
         print("finally")    
-    
     
     print("la suite du code")
 
