@@ -2,6 +2,7 @@
 class Rectangle:
 
     def __init__(self,longueur,largeur):
+        print(f"def __init__(self,{longueur},{largeur})")
         self.__longueur = longueur # _Rectangle__longueur
         self.__largeur = largeur
     
