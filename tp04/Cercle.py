@@ -15,9 +15,9 @@ class Cercle(IMetaCalcGeo):
     def rayon(self,rayon:int)->None:
         self.__rayon = rayon
 
-    # @property
-    # def surface(self):
-    #     return math.pi*self.__rayon**2
+    @property
+    def surface(self):
+        return math.pi*self.__rayon**2
 
     def __str__(self) -> str:
         return f"{__class__.__name__} {self.__rayon=}"
