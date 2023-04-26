@@ -14,16 +14,20 @@ class Rectangle:
         self.__longueur = longueur
 
     @property
-    def largeur(self):
+    def largeur(self)->int:
         return self.__largeur
     
     @largeur.setter
-    def largeur(self,largeur):
+    def largeur(self,largeur:int):
         self.__largeur = largeur
 
     @property
     def surface(self):
         return self.__longueur*self.__largeur
     
+
+    def __str__(self) -> str:
+        return f"{__class__.__name__} {self.longueur=}, {self.largeur=}"
+
     def __del__(self):
         print("del rectangle")

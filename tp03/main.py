@@ -20,5 +20,10 @@ def main():
     print(r2.largeur)
     print(r2.longueur)
     print(r2)
+    print(50*'-')
+    
+    s= str(r)
+    print(s)
+
 if __name__ == '__main__':
     main()
