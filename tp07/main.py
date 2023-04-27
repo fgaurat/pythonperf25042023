@@ -3,6 +3,14 @@ from Todo import Todo
 from TodoDAO import TodoDAO
 
 def main():
+    dao = TodoDAO("todos_db.db")
+
+    todos = dao.findAll()
+
+    for todo in todos:
+        print(todo)
+
+def main01():
     r = httpx.get("https://jsonplaceholder.typicode.com/todos")
     todos = r.json()
 
