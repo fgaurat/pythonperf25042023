@@ -1,5 +1,7 @@
+from Singleton import Singleton
 
-class Rectangle:
+
+class Rectangle(metaclass=Singleton):
 
     def __init__(self,longueur,largeur):
         self.__longueur = longueur # _Rectangle__longueur
