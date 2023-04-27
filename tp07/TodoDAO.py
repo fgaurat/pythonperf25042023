@@ -17,8 +17,27 @@ VALUES({todo.userId},'{todo.title}',{todo.completed})
         cur.execute(sql)
         self.__con.commit()
 
-    def findAll(self)->list[Todo]:
-        pass
+    # def findAll(self)->list[Todo]:
+    #     r = []
+    #     cur = self.__con.cursor()
+    #     sql = "SELECT id,user_id,title,completed FROM todos_tbl"
+    #     res = cur.execute(sql)
+        
+    #     for id,user_id,title,completed in res.fetchall():
+    #         t = Todo(id,user_id,title,completed)
+    #         r.append(t)
+
+    #     return r
+    
+    def findAll(self):
+        cur = self.__con.cursor()
+        sql = "SELECT id,user_id,title,completed FROM todos_tbl"
+        res = cur.execute(sql)
+        
+        for id,user_id,title,completed in res.fetchall():
+            t = Todo(id,user_id,title,completed)
+            yield t
+
 
     def __del__(self):
         self.__con.close()

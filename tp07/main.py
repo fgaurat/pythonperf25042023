@@ -1,14 +1,25 @@
-import httpx
+import httpx 
 from Todo import Todo
 from TodoDAO import TodoDAO
 
+def completed_todos(todos):
+    for todo in todos:
+        if todo.completed:
+            yield todo
+
+
 def main():
     dao = TodoDAO("todos_db.db")
-
     todos = dao.findAll()
+    # t = next(todos)
+    # print(t)
+    # t = next(todos)
+    # print(t)
 
-    for todo in todos:
+    # dao.findAll() | completed_todos
+    for todo in completed_todos(dao.findAll()):
         print(todo)
+
 
 def main01():
     r = httpx.get("https://jsonplaceholder.typicode.com/todos")
