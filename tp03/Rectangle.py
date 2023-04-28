@@ -1,9 +1,10 @@
 
 class Rectangle:
 
-    def __init__(self,longueur,largeur):
+    def __init__(self,longueur=0,largeur=0):
         self.__longueur = longueur # _Rectangle__longueur
         self.__largeur = largeur
+        assert self.__longueur != 1
     
     @property
     def longueur(self):

@@ -1,0 +1,7 @@
+setup.py
+say_hello/__init__.py
+say_hello/hello.py
+say_hello2804.egg-info/PKG-INFO
+say_hello2804.egg-info/SOURCES.txt
+say_hello2804.egg-info/dependency_links.txt
+say_hello2804.egg-info/top_level.txt

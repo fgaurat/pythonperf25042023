@@ -1,0 +1,6 @@
+WARNING:root:Watch out!
+INFO:root:I told you so
+WARNING:Watch out!
+INFO:I told you so
+WARNING - 2023-04-28 15:15:25,829 - Watch out!
+INFO - 2023-04-28 15:15:25,829 - I told you so

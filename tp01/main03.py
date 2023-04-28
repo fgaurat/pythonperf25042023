@@ -11,7 +11,8 @@ import pck
 
 def main():
     # hello2("GAURAT","Fred")
-    pck.monautremodule.hello3("GAURAT","Fred")
+    # pck.monautremodule.hello3("GAURAT","Fred")
+    h2("GAURAT","Fred")
     
 # def main():
 #     mm.hello2("GAURAT","Fred")
