@@ -6,10 +6,17 @@ import asyncio
 import threading
 import functools
 
-async def download(url):
+async def download_without_async(url):
     loop = asyncio.get_event_loop()
-                    
     response = await loop.run_in_executor(None, functools.partial(httpx.get,url))
+    file_name = f'./logs/{url.split("/")[-1]}'
+
+    with open(file_name,'w') as f:
+        print(response.text,file=f)
+
+async def download(url):
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
     
     file_name = f'./logs/{url.split("/")[-1]}'
 
