@@ -2,6 +2,8 @@ import httpx
 import sys
 from bs4 import BeautifulSoup
 import time
+import threading
+from multiprocessing.pool import ThreadPool
 
 def download(url):
     response = httpx.get(url)
@@ -16,12 +18,13 @@ def main():
     response = httpx.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-
     all_a = [f"{url}{a['href']}" for a in soup.find_all('a') if ".log" in a['href']]    
 
     start = time.perf_counter()
-    for url_to_download in all_a:
-        download(url_to_download)        
+
+    with ThreadPool(5) as tp:
+        tp.map(download,all_a)
+    
     print(time.perf_counter()-start)
 
     

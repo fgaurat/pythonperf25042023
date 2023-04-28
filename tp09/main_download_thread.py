@@ -2,8 +2,10 @@ import httpx
 import sys
 from bs4 import BeautifulSoup
 import time
+import threading
 
 def download(url):
+    print(threading.current_thread().name)
     response = httpx.get(url)
     file_name = f'./logs/{url.split("/")[-1]}'
 
@@ -11,7 +13,7 @@ def download(url):
         print(response.text,file=f)
 
 def main():
-
+    print(threading.current_thread().name)
     url ="https://logs.eolem.com/"
     response = httpx.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -21,7 +23,11 @@ def main():
 
     start = time.perf_counter()
     for url_to_download in all_a:
-        download(url_to_download)        
+        th1 = threading.Thread(target=download,args=[url_to_download])
+        th1.start()
+        print("loop",th1.name)
+        # threading.Thread(target=download,args=[url_to_download]).start()
+    
     print(time.perf_counter()-start)
 
     
